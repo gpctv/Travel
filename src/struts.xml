@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="travel" namespace="/" extends="struts-default,json-default">
+         <action name="picture" class="picture">
+        <result name="SUCCESS">/WEB-INF/view/picture.jsp</result>
+         </action>
+         
+         <action name="pictureRest" class="pictureRest">
+       <interceptor-ref name="defaultStack"/>
+         <interceptor-ref name="json">
+            <param name="enableSMD">true</param>
+        </interceptor-ref>
+       <result type="json">
+       </result>  
+      </action>
+    </package>
+</struts>
