@@ -48,12 +48,15 @@ var CONTEXT_PATH='${pageContext.request.contextPath}';
   </div>
 <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon" aria-hidden="true"><font color="#4169e1">上一張</font></span>
-      
+      <font color="#4169e1" class="small">上一張</font>
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+     
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon" aria-hidden="true"><font color="#4169e1">下一張</font></span>
-      
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+      <font color="#4169e1" class="small">下一張</font>
     </a>
    
 </div>
