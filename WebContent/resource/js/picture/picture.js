@@ -4,8 +4,9 @@
 
 $(document).ready(function(){
 	ajaxInterval();
+	clickNext(7000);//每幾秒下一張
 });
-var fileDisplay=[] ;//回傳SERVER 目前CLIENT端的照片數量
+var fileDisplay=[] ;//回傳SERVER 目前CLIENT端的照片數量 
 function ajaxInterval(){
 	 $.ajax({
 		url:CONTEXT_PATH+"/pictureRest",
@@ -35,9 +36,7 @@ function ajaxInterval(){
 						'">'+
 						'</div>');
 				console.log('s.fileName:'+s.fileName[key]);
-				 if(active=='active'){//圖片第一次載入完畢後，按一下下一張輪播
-					 $("a[data-slide='next']").click();
-				 }
+				  
 			});
 		},
 		 error: function(){
@@ -55,7 +54,7 @@ function ajaxInterval(){
 				 fileDisplay.push($(this).find('img').attr('file-name')); 
 		     });
 		 
-		
+		    
         }
 	}); 
 }
@@ -70,4 +69,12 @@ function firstLoad(key){
 		} 
 	}
 	return a;
+}
+//按下一張
+function clickNext(time){
+	//當目前照片數(CLIENT)大於1張時
+	setInterval(function(){  if($('.item').length>1){
+		$("#myCarousel").carousel("next");
+		}
+		}, time);
 }

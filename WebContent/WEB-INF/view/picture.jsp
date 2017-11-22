@@ -24,7 +24,7 @@ var CONTEXT_PATH='${pageContext.request.contextPath}';
 <!--  <img src="" id="image1" class="img-responsive center-block img-rounded"  style="width:30% height:50%" > -->
  <div class="container">
    
- <div id="myCarousel" class="carousel slide"   data-interval="7000">
+ <div id="myCarousel" class="carousel slide">
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner"> 
